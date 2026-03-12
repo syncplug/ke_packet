@@ -19,5 +19,16 @@ function hexToDec(hexString) {
     return resultString;
 }
 
-
-
+function hexToString(hexString) {
+    const result = [];
+    for (let i = 0; i < hexString.length; i += 2) {
+        const hex = hexString.substring(i, i+2);
+        const dec = parseInt(hex, 16);
+        if (dec === 0x2C) {
+            result.push(',');
+        } else {
+            result.push(hex);
+        }
+    }
+    return result.join('').split(',');
+}
