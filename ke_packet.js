@@ -33,20 +33,6 @@ function hexToString(hexString) {
     return result.join('').split(',');
 }
 
-function hexToString(hexString) {
-    const result = [];
-    for (let i = 0; i < hexString.length; i += 2) {
-        const hex = hexString.substring(i, i+2);
-        const dec = parseInt(hex, 16);
-        if (dec === 0x2C) {
-            result.push(',');
-        } else {
-            result.push(hex);
-        }
-    }
-    return result.join('').split(',');
-}
-
 function hexToFloat64(str64) {
   // Pad the str64ing with zeroes to 16 characters.
   str64 = (str64 + "0000000000000000").slice(0,16);
